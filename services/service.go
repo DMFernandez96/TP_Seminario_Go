@@ -1,26 +1,28 @@
 package services
 
+import "fmt"
+
 type Cadena struct {
-	Tipo   string
-	Length int
-	Value  string
+	Tipo  string
+	Largo int
+	Valor string
 }
 
-type CadenaService interface {
-	Login(tipo, value string, length int) (*Cadena, error)
-}
-type cadenaSrv struct {
+func NewCadena(tipo, valor string, largo int) Cadena {
+	return Cadena{tipo, largo, valor} //genera una instancia de la estructura Cadena
 }
 
-func (ca *cadenaSrv) Login(tipo, value string, length int) (*Cadena, error) {
-	return &Cadena{"TX", 6, "ABCDEF"}, nil
+func CambiarCadena(c *Cadena, tipo, valor string, largo int) {
+	c.Tipo = tipo
+	c.Valor = valor
+	c.Largo = largo
 }
 
-func NewCadena(tipo, value string, length int) Cadena {
-	return Cadena{tipo, length, value} //me genera una instancia de la estructura Cadena
-}
-
-//funcion constructora
-func NewCadenaService() (CadenaService, error) {
-	return &cadenaSrv{}, nil
+func ControlarLargoValor(c *Cadena) bool {
+	r := true
+	if len(c.Valor) != c.Largo {
+		fmt.Println("Error, el valor" + c.Valor + " no es del largo correspondiente")
+		r = false
+	}
+	return r
 }

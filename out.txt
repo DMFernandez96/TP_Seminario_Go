@@ -1,0 +1,7 @@
+mode: set
+seminarioGo2021/cadena.go:14.13,20.2 3 0
+seminarioGo2021/services/service.go:11.54,13.2 1 1
+seminarioGo2021/services/service.go:15.62,19.2 3 1
+seminarioGo2021/services/service.go:21.42,23.29 2 1
+seminarioGo2021/services/service.go:27.2,27.10 1 1
+seminarioGo2021/services/service.go:23.29,26.3 2 1
