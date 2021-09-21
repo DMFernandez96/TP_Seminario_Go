@@ -17,4 +17,7 @@ func main() {
 	services.CambiarCadena(&c, "TX", "ABCDEF", 6) // & es la dir de memoria
 	fmt.Println(c)
 
+	e := services.NewCadena1("NNkjjhvy")
+	fmt.Println(e[:2])
+
 }

@@ -1,6 +1,8 @@
 package services
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Cadena struct {
 	Tipo  string
@@ -10,6 +12,15 @@ type Cadena struct {
 
 func NewCadena(tipo, valor string, largo int) Cadena {
 	return Cadena{tipo, largo, valor} //genera una instancia de la estructura Cadena
+}
+
+func NewCadena1(cad string) {
+	var cadena Cadena
+	cadena.Tipo = cad[:2]
+	/*cadena.Largo = strconv.Atoi(cad[2:4])
+	cadena.Largo = cad[2:4]
+	cadena.Tipo = cad[4:]
+	if*/
 }
 
 func CambiarCadena(c *Cadena, tipo, valor string, largo int) {
