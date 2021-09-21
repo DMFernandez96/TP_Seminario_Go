@@ -17,6 +17,7 @@ func main() {
 	fmt.Println(c)
 
 	e := services.NewCadena2("NNkjjhvy")
+	e := services.NewCadena1("ldfafa")
 	fmt.Println(e)
 
 }

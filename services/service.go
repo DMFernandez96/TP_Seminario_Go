@@ -31,11 +31,16 @@ func ControlarLargoValor(c *Cadena) bool {
 }
 
 func NewCadena1(cad string) Cadena {
+
 	var c Cadena
 	c.Tipo = cad[:2]
-	c.Largo = strconv.Atoi(cad[2:4])
+	r, err := strconv.Atoi(cad[2:4])
+	c.Largo = r
+	if err != nil {
+		panic(err)
+	}
 	c.Tipo = cad[4:]
-	return
+	return Cadena()
 }
 
 /*func NewCadena2(s string) Cadena {
