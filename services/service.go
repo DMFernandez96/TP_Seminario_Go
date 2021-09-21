@@ -2,6 +2,7 @@ package services
 
 import (
 	"fmt"
+	"strconv"
 )
 
 type Cadena struct {
@@ -12,15 +13,6 @@ type Cadena struct {
 
 func NewCadena(tipo, valor string, largo int) Cadena {
 	return Cadena{tipo, largo, valor} //genera una instancia de la estructura Cadena
-}
-
-func NewCadena1(cad string) {
-	var cadena Cadena
-	cadena.Tipo = cad[:2]
-	/*cadena.Largo = strconv.Atoi(cad[2:4])
-	cadena.Largo = cad[2:4]
-	cadena.Tipo = cad[4:]
-	if*/
 }
 
 func CambiarCadena(c *Cadena, tipo, valor string, largo int) {
@@ -37,3 +29,21 @@ func ControlarLargoValor(c *Cadena) bool {
 	}
 	return r
 }
+
+func NewCadena1(cad string) Cadena {
+	var c Cadena
+	c.Tipo = cad[:2]
+	c.Largo = strconv.Atoi(cad[2:4])
+	c.Tipo = cad[4:]
+	return
+}
+
+/*func NewCadena2(s string) Cadena {
+	var n = strconv.Atoi(s[2])
+	return Cadena{s[:2], n, s[4:]} //genera una instancia de la estructura Cadena
+}
+/*func CambiarLargo(c string) int{
+
+	for
+	return strconv.Atoi(c[2])
+}*/

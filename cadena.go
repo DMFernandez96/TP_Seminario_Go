@@ -12,12 +12,11 @@ import (
 }*/
 
 func main() {
-	//fmt.Println(cadena)
 	c := services.NewCadena("NN", "asdf", 4)      //funcion constructora (go no tiene constructores)
 	services.CambiarCadena(&c, "TX", "ABCDEF", 6) // & es la dir de memoria
 	fmt.Println(c)
 
-	e := services.NewCadena1("NNkjjhvy")
-	fmt.Println(e[:2])
+	e := services.NewCadena2("NNkjjhvy")
+	fmt.Println(e)
 
 }
