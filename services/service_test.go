@@ -24,7 +24,7 @@ func TestCadenaParser(t *testing.T) {
 
 	for _, tt := range tests {
 
-		_, err := NewCadena1(tt.Input)
+		_, err := NewCadena(tt.Input)
 		if err == nil {
 			assert.Equal(t, err == nil, tt.Success)
 		}

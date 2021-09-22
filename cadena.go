@@ -7,7 +7,7 @@ import (
 
 func main() {
 	var e services.Cadena
-	e, err := services.NewCadena1("ldfafa")
+	e, err := services.NewCadena("TX02AB")
 	if err != nil {
 		fmt.Println("Error")
 	}
