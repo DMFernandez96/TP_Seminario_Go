@@ -1,0 +1,10 @@
+mode: set
+seminarioGo2021/services/service.go:14.53,15.29 1 1
+seminarioGo2021/services/service.go:18.2,18.21 1 1
+seminarioGo2021/services/service.go:15.29,17.3 1 1
+seminarioGo2021/services/service.go:21.45,31.58 8 1
+seminarioGo2021/services/service.go:35.2,35.65 1 1
+seminarioGo2021/services/service.go:31.58,33.3 1 1
+seminarioGo2021/services/service.go:38.46,39.28 1 1
+seminarioGo2021/services/service.go:42.2,42.50 1 1
+seminarioGo2021/services/service.go:39.28,41.3 1 1
