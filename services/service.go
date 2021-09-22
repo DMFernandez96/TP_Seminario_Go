@@ -1,7 +1,7 @@
 package services
 
 import (
-	"fmt"
+	"errors"
 	"strconv"
 )
 
@@ -11,44 +11,33 @@ type Cadena struct {
 	Valor string
 }
 
-func NewCadena(tipo, valor string, largo int) Cadena {
-	return Cadena{tipo, largo, valor} //genera una instancia de la estructura Cadena
-}
-
-func CambiarCadena(c *Cadena, tipo, valor string, largo int) {
-	c.Tipo = tipo
-	c.Valor = valor
-	c.Largo = largo
-}
-
-func ControlarLargoValor(c *Cadena) bool {
-	r := true
+func ControlarLargoValor(c *Cadena) (string, error) {
 	if len(c.Valor) != c.Largo {
-		fmt.Println("Error, el valor" + c.Valor + " no es del largo correspondiente")
-		r = false
+		return c.Valor, errors.New("Error, el valor" + c.Valor + " no es del largo correspondiente")
 	}
-	return r
+	return c.Valor, nil
 }
 
-func NewCadena1(cad string) Cadena {
+func NewCadena1(cad string) (Cadena, error) {
 
 	var c Cadena
-	c.Tipo = cad[:2]
-	r, err := strconv.Atoi(cad[2:4])
-	c.Largo = r
-	if err != nil {
-		panic(err)
+	if len(cad) > 0 {
+		c.Tipo = cad[:2]
+		_, errTipo := comprobarTipo(c.Tipo)
+		r, errLargo := strconv.Atoi(cad[2:4])
+		c.Largo = r
+		c.Valor = cad[4:]
+		_, errValor := ControlarLargoValor(&c)
+		if errTipo == nil && errLargo == nil && errValor == nil {
+			return c, nil
+		}
 	}
-	c.Tipo = cad[4:]
-	return Cadena()
+	return Cadena{"", 0, ""}, errors.New("Error, cadena no valida")
 }
 
-/*func NewCadena2(s string) Cadena {
-	var n = strconv.Atoi(s[2])
-	return Cadena{s[:2], n, s[4:]} //genera una instancia de la estructura Cadena
+func comprobarTipo(s string) (string, error) {
+	if s == "TX" || s == "NN" {
+		return s, nil
+	}
+	return s, errors.New("Tipo de cadena no valido")
 }
-/*func CambiarLargo(c string) int{
-
-	for
-	return strconv.Atoi(c[2])
-}*/
